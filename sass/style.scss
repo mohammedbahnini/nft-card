@@ -1,0 +1,160 @@
+$soft-blue : hsl(215, 51%, 70%);
+$soft-cyan : hsla(178, 100%, 50%, 0.5);
+$cyan : rgba(30, 245, 246, 1);
+
+$main-bg : hsl(217, 54%, 11%);
+$card-bg : hsl(216, 50%, 16%);
+$card-shadow : rgba(12, 23, 41, 1);
+$line : hsl(215, 32%, 27%);
+$white : hsl(0, 0%, 100%);
+
+*,*::after , *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 18px;
+    height: 100vh;
+}
+
+body{
+    height: 100%;
+    background-color: $main-bg;
+    font-family: 'Outfit', sans-serif;
+    color : $soft-blue;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+.container{
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width : 768px){
+        width: 85%;
+        margin: 0 auto;
+        padding: 3rem 0;
+        
+    }
+    .card{
+        @media screen and (max-width : 768px){
+            width: 100%;
+        }
+
+        padding : 1.277777777777778rem;
+        border-radius : 15px;
+        max-width: 19.44444444444444rem;
+        background-color: $card-bg;
+        box-shadow: $card-shadow 0px 35px 0px 17px;
+        .card-img{
+            display: block;
+            border-radius: 15px;
+            height : 16.66666666666667rem;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 1.277777777777778em;
+            img{
+                height: 100%;
+            }
+            &::after{
+                font-family: 'Font Awesome 6 Free';
+                font-size: 2.5rem;
+                position: absolute;
+                content : "\f06e" ;
+                color : $white ; 
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background-color: $soft-cyan;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                transition: .3s;
+            }
+            &:hover::after{
+                opacity: 1;
+            }
+        }
+        .card-body{
+            padding-bottom: 1.277777777777778em;
+            border-bottom: .9px solid $line;
+            .title{
+                display: block;
+                font-weight: 600;
+                color : white;
+                transition: .3s;
+                
+                &:hover{
+                    color : $cyan;
+                }
+            }
+            .text{
+                font-weight: 300;
+                padding: 1.277777777777778em 0;
+                
+            }
+
+            .footer{
+                display: flex;
+                justify-content: space-between;
+                .value{
+                    color : $cyan;
+                    font-weight: 400;
+                    font-size: .9rem;
+                    .icon{
+                        margin-right: .2em;
+                    }
+                }
+                .time{
+                    font-weight: 300;
+                    font-size: .9rem;
+                    .icon{
+                        margin-right: .2em;
+                    }
+                }
+            }
+        }
+        .card-footer{
+            padding: 1em 0 0 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            .card-avatar{
+                
+                border: 1.5px solid $white ;
+                border-radius: 50%;
+                width: 2.5rem;
+                height: 2.5rem;
+                flex-shrink: 0;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .card-owner{
+            .text{
+                font-size: .9rem;
+                a{
+                    color : $white;
+                    transition: .3s;
+                    &:hover{
+                        color : $cyan;
+                    }
+                }
+            }
+        }
+    }
+
+}
